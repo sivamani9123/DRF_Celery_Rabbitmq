@@ -1,0 +1,12 @@
+Django==4.2
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.0  # For JWT authentication
+mysqlclient==2.1.1  # If using MySQL database
+psycopg2-binary==2.9.6  # If using PostgreSQL (remove if using MySQL)
+celery==5.3.1  # Celery for async tasks
+kombu==5.3.3  # Messaging library (required by Celery)
+redis==5.0.1  # If using Redis as Celery broker
+amqp==5.1.1  # For RabbitMQ support
+pytz==2023.3  # Timezone support
+sqlparse==0.4.4  # SQL parsing for Django
+python-decouple==3.6  # For managing environment variables
