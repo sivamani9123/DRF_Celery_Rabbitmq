@@ -63,19 +63,19 @@ class SignupView(APIView):
     
 class LoginView(APIView):
     def post(self, request):
-        logger.delay("just started login")
+        # logger.delay("just started login")
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
             username = serializer.validated_data['username']
             password = serializer.validated_data['password']
 
             try:
-                logger.delay("at line 73 getting username to check")
+                # logger.delay("at line 73 getting username to check")
                 user = User.objects.get(username=username)
                 if check_password(password, user.password):  # Validate hashed password
-                    logger.delay("you are there")
+                    # logger.delay("you are there")
                     refresh = RefreshToken.for_user(user)
-                    logger.delay("we are almost good to generated the data")
+                    # logger.delay("we are almost good to generated the data")
                     return Response({
                         "message": "Login successful",
                         "access": str(refresh.access_token),
